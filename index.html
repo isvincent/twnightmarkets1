@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-Hant-TW" data-theme="system" data-device="auto" data-layout="auto" data-font="normal">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>台灣的夜市｜互動學習網</title>
+<meta name="description" content="以臺灣夜市文化為主題的互動學習網：教師與學生指引、互動視覺化元件、進階延伸、練習、測驗與學習歷程，支援國語／台語切換。">
+<meta name="theme-color" content="#ef4136">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="台灣的夜市">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Huninn&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app">
+  <div class="shell">
+    <header class="topbar">
+      <button class="brand" data-go="home" aria-label="首頁">
+        <span class="brand-logo" aria-hidden="true">🏮</span>
+        <span class="brand-text"><b data-i18n="appTitle">台灣的夜市</b><small data-i18n="appSub">互動學習網</small></span>
+      </button>
+      <div class="top-actions">
+        <button class="pill lang-quick" id="langQuick" aria-label="切換語言">國／台</button>
+        <button class="pill" id="soundQuick" aria-label="音效">🔊</button>
+        <button class="pill gear" id="openSettings" aria-label="顯示與操作設定">⚙️<span class="gear-label" data-i18n="settings">顯示與操作設定</span></button>
+      </div>
+    </header>
+    <nav class="tabs" id="tabs" aria-label="主選單"></nav>
+    <main id="view" tabindex="-1"></main>
+    <footer class="foot"><p data-i18n="footer"></p><p class="small-note" data-i18n="langNote"></p></footer>
+  </div>
+</div>
+
+<!-- 設定面板 -->
+<div class="drawer-mask" id="drawerMask" hidden></div>
+<aside class="drawer" id="settings" aria-hidden="true" role="dialog" aria-labelledby="setTitle">
+  <div class="drawer-head">
+    <h2 id="setTitle">⚙️ <span data-i18n="settings">顯示與操作設定</span></h2>
+    <button class="icon-btn" id="closeSettings" aria-label="關閉">✕</button>
+  </div>
+  <div class="drawer-body" id="settingsBody"></div>
+  <div class="drawer-foot"><button class="btn ghost" id="resetSettings" data-i18n="reset">恢復預設</button></div>
+</aside>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<canvas id="confetti" aria-hidden="true"></canvas>
+
+<script src="js/data.js"></script>
+<script src="js/viz.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
